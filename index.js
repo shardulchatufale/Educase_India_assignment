@@ -10,7 +10,7 @@ app.use(express.json());
 
 mongoose
   .connect(
-    process.env.MONGO_URI || "mongodb://127.0.0.1:27017/assignment",  // <-- fallback local DB
+    process.env.MONGO_URI || "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.9.1",  // <-- fallback local DB
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
